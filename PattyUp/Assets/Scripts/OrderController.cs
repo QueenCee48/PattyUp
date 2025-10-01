@@ -7,7 +7,6 @@ public class OrderController : MonoBehaviour
 {
     string[] ingredients;
     string[] order;
-    int pattyCount;
     bool orderCompleted = false;
     Text orderText;
 
@@ -16,7 +15,6 @@ public class OrderController : MonoBehaviour
     {
         ingredients = new string[] { "Top Bun", "Lettuce", "Tomatoes", "Onions", "Pickles", "Cheese", "Egg", "Bacon", "Patty" };
         order = new string[Random.Range(1, 9) + 2]; // +2 for top bun and patty
-        pattyCount = 0;
 
         orderText = GameObject.Find("OrderText").GetComponent<Text>();
     }
@@ -43,24 +41,13 @@ public class OrderController : MonoBehaviour
                     order[i] = ingredients[randIndex];
                 }
 
-                if (order[i] == "Patty")
+                if (i == order.Length - 1 && order[i] == "Patty")
                 {
-                    pattyCount++;
-                }
-
-                string ingredient = order[i];
-                // Condense multiple patties into one line
-                if (i > 0 && ingredient == "Patty" && order[i - 1] == "Patty")
-                {
-                    continue;
-                }
-                else if (i == order.Length-1 && ingredient == "Patty" && pattyCount > 1)
-                {
-                    orderText.text += "- " + ingredient + pattyCount + "x\n";
+                    orderText.text += "- " + order[i] + "\n";
                 }
                 else
                 {
-                    orderText.text += "- " + ingredient + "\n";
+                    orderText.text += "- " + order[i] + "\n";
                 }
             }
         }
