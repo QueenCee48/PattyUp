@@ -1259,6 +1259,7 @@ GameObject:
   - component: {fileID: 445984892}
   - component: {fileID: 445984891}
   - component: {fileID: 445984890}
+  - component: {fileID: 445984894}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1357,6 +1358,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &445984894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445984889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e871b9dd078722540aa84524c4633ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &446782910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2533,8 +2546,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 837843401}
+  - component: {fileID: 837843402}
   m_Layer: 0
-  m_Name: BurgerBuild
+  m_Name: BurgerDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2557,6 +2571,18 @@ Transform:
   - {fileID: 599510670}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &837843402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837843400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafebf7c4cc12dc41b2e488dc5388a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &853195996
 GameObject:
   m_ObjectHideFlags: 0
@@ -5630,6 +5656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1723961023}
+  - component: {fileID: 1723961024}
   m_Layer: 0
   m_Name: FoodBoard
   m_TagString: Untagged
@@ -5662,6 +5689,18 @@ Transform:
   - {fileID: 490841775}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1723961024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723961022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3393836c080ea4d43afd738a61dceade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1790748867
 GameObject:
   m_ObjectHideFlags: 0
@@ -6104,24 +6143,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 0.7
-  m_Text: '- Top Bun
-
-    - Egg
-
-    - Pickles
-
-    - Bacon
-
-    - Onions
-
-    -
-    Tomatoes
-
-    - Lettuce
-
-    - Cheese
-
-    - Patty 2x'
+  m_Text: 
 --- !u!222 &1913729925
 CanvasRenderer:
   m_ObjectHideFlags: 0
