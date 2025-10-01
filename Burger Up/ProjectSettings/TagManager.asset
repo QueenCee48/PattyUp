@@ -10,6 +10,9 @@ TagManager:
   - Lettuce
   - Tomatoes
   - Cheese
+  - Bacon
+  - Pickles
+  - Onions
   layers:
   - Default
   - TransparentFX
