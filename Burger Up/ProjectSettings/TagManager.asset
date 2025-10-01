@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Heart
+  - TopBun
+  - Patty
+  - Lettuce
+  - Tomatoes
+  - Cheese
   layers:
   - Default
   - TransparentFX
