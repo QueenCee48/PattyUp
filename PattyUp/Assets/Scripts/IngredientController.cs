@@ -30,7 +30,7 @@ public class IngredientController : MonoBehaviour
             burgerController.AddIngredientByName(ingredientName);
             Debug.Log("Added: " + ingredientName);
 
-            ingredientClone = Instantiate(ingredientObject, clonePosition, ingredientObject.transform.rotation);
+            ingredientClone = Instantiate(ingredientObject, ingredientObject.transform.position, ingredientObject.transform.rotation);
             ingredientClone.SetActive(true);
         }
         
