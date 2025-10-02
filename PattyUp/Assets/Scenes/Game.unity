@@ -309,7 +309,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientObject: {fileID: 1126407502}
+  clonePosition: {x: 0.05, y: 1.28, z: 0.04}
   ingredientName: Bacon
+--- !u!1 &61907475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4568622358816353965, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+  m_PrefabInstance: {fileID: 2333906157602322959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &145743394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,6 +471,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155381718}
   m_CullTransparentMesh: 1
+--- !u!1 &157479487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5675190275449009605, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+  m_PrefabInstance: {fileID: 2333906157602322959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &185547568
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientObject: {fileID: 1653386422}
+  clonePosition: {x: 0, y: 1.93, z: 0}
   ingredientName: Patty
 --- !u!1001 &208230779
 PrefabInstance:
@@ -764,6 +778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientObject: {fileID: 61907475}
+  clonePosition: {x: 0, y: 1.62, z: 0}
   ingredientName: Cheese
 --- !u!1001 &299323531
 PrefabInstance:
@@ -1736,6 +1752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientObject: {fileID: 1244201080}
+  clonePosition: {x: 2.29, y: 2.11, z: 0.72}
   ingredientName: Egg
 --- !u!65 &490841777
 BoxCollider:
@@ -1888,7 +1906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: 153}
+  m_AnchoredPosition: {x: -60, y: 153}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &499328812
@@ -2105,7 +2123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: 153}
+  m_AnchoredPosition: {x: 140, y: 153}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &603045584
@@ -2930,6 +2948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientObject: {fileID: 871594272}
+  clonePosition: {x: 0, y: 2.15, z: 0}
   ingredientName: Lettuce
 --- !u!1 &813793755
 GameObject:
@@ -2965,7 +2985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: 153}
+  m_AnchoredPosition: {x: 90, y: 153}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813793757
@@ -3050,6 +3070,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prepared: []
+--- !u!1 &838475370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3760162155823212305, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+  m_PrefabInstance: {fileID: 2333906157602322959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &853195996
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,7 +3286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: 153}
+  m_AnchoredPosition: {x: -10, y: 153}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871037017
@@ -3299,6 +3324,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871037015}
   m_CullTransparentMesh: 1
+--- !u!1 &871594272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 762196820002149538, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+  m_PrefabInstance: {fileID: 2333906157602322959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &881748061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4377,6 +4407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientObject: {fileID: 157479487}
+  clonePosition: {x: 0.04, y: 1.55, z: -0.03}
   ingredientName: Tomatoes
 --- !u!1001 &1125017620
 PrefabInstance:
@@ -4459,6 +4491,16 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5514668383258821666, guid: c121ebf3d8dae0844a704ccbddf89efe, type: 3}
   m_PrefabInstance: {fileID: 1125017620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1126407502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4572710538217550532, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+  m_PrefabInstance: {fileID: 2333906157602322959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1130550877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 656790865123434626, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+  m_PrefabInstance: {fileID: 2333906157602322959}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1145468328
 PrefabInstance:
@@ -4952,6 +4994,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9002727507400296663, guid: 59aca0d819fc55e42addb3de341d4b1e, type: 3}
   m_PrefabInstance: {fileID: 1206066589}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1244201080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3248776392126133573, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+  m_PrefabInstance: {fileID: 2333906157602322959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1313335647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5354,6 +5401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientObject: {fileID: 1130550877}
+  clonePosition: {x: 0.02, y: 1.39, z: 0.04}
   ingredientName: Onions
 --- !u!1 &1390683596
 GameObject:
@@ -5428,6 +5477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientObject: {fileID: 838475370}
+  clonePosition: {x: 0.09, y: 1.07, z: 0}
   ingredientName: Pickles
 --- !u!1 &1423004793
 GameObject:
@@ -6206,6 +6257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientObject: {fileID: 1829235168}
+  clonePosition: {x: -0.01, y: 0.467, z: 0}
   ingredientName: Top Bun
 --- !u!1 &1636528332
 GameObject:
@@ -6275,6 +6328,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1653386422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8831374632754628684, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+  m_PrefabInstance: {fileID: 2333906157602322959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1722531831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6411,6 +6469,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3393836c080ea4d43afd738a61dceade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 499328810}
+  - {fileID: 871037015}
+  - {fileID: 1790748867}
+  - {fileID: 813793755}
+  - {fileID: 603045582}
   timer: 45
   score: 0
 --- !u!1 &1790748867
@@ -6703,6 +6767,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821597979}
   m_CullTransparentMesh: 1
+--- !u!1 &1829235168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1887709861928188462, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+  m_PrefabInstance: {fileID: 2333906157602322959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1885888685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7120,9 +7189,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 837843401}
     m_Modifications:
+    - target: {fileID: 384650810771629537, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 562265460902448528, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
       propertyPath: m_Name
       value: Hamburger
+      objectReference: {fileID: 0}
+    - target: {fileID: 562265460902448528, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656790865123434626, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 762196820002149538, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1714677915286452558, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
       propertyPath: m_LocalScale.x
@@ -7179,6 +7264,34 @@ PrefabInstance:
     - target: {fileID: 1714677915286452558, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887709861928188462, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248776392126133573, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3760162155823212305, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568622358816353965, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572710538217550532, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675190275449009605, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831374632754628684, guid: db90bed46fb38d04ca1e380e28c7dcdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

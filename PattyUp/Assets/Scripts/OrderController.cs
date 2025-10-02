@@ -31,7 +31,7 @@ public class OrderController : MonoBehaviour
             return;
         }
 
-        while (!orderCompleted )
+        while (!orderCompleted)
         {
             for (int i = 0; i < order.Length; i++)
             {
@@ -67,8 +67,13 @@ public class OrderController : MonoBehaviour
         return order;
     }
 
-    public void setOrderCompleted(bool status)
+    public void SetOrderCompleted(bool status)
     {
         orderCompleted = status;
+    }
+    
+    public void SetOrderText(string text)
+    {
+        orderText.text = text;
     }
 }

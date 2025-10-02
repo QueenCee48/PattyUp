@@ -35,13 +35,13 @@ public class BurgerController : MonoBehaviour
 
         if (tempList.Contains("Top Bun")) // || (tempList.Contains("Top Bun") && tempList.Count == 10))
         {
-            orderController.setOrderCompleted(true);
-            preparing = false;
             return current;
         }
 
         if (ingredient == "Top Bun")
         {
+            preparing = false;
+            orderController.SetOrderCompleted(true);
             tempList.Insert(0, ingredient);
         }
         else if (tempList.Count < 9)

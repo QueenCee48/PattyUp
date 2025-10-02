@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    GameObject[] hearts;
+    public GameObject[] hearts;
     Text timerText;
     Text scoreText;
     OrderController orderController;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     Text instructionTitle;
     Text instructionText;
     Text hintText;
+    RawImage[] heartImages;
 
     int heartsRemaining;
     public float timer;
@@ -35,7 +37,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hearts = GameObject.FindGameObjectsWithTag("Heart");
+        //hearts = GameObject.FindGameObjectsWithTag("Heart");
+        heartImages = new RawImage[hearts.Length];
         timerText = GameObject.Find("TimerText").GetComponent<Text>();
         scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
         orderController = GameObject.Find("Canvas").GetComponent<OrderController>();
@@ -51,15 +54,20 @@ public class PlayerController : MonoBehaviour
         instructionText = GameObject.Find("InstructionText").GetComponent<Text>();
         hintText = GameObject.Find("HintText").GetComponent<Text>();
 
+        
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            Debug.Log(hearts[i].name);
+            heartImages[i] = hearts[i].GetComponent<RawImage>();
+        }
+
         startPanel.enabled = true;
         logo.enabled = true;
         playText.enabled = true;
         creditText.enabled = true;
 
         heartsRemaining = hearts.Length;
-        // order = orderController.GetOrder();
-        // prepared = burgerController.GetPrepared();
-        // preparing = burgerController.GetPreparing();
         timerText.text = "Timer: " + Mathf.CeilToInt(timer);
         gameOver = false;
         instructionsShown = false;
@@ -100,11 +108,7 @@ public class PlayerController : MonoBehaviour
         if (timer <= 0f)
         {
             timer = 0f;
-            gameOver = true;
-            Time.timeScale = 0;
-            gameOverPanel.enabled = true;
-            gameOverText.enabled = true;
-            playAgainText.enabled = true;
+            GameOver();
         }
 
         if (!gameOver)
@@ -118,9 +122,19 @@ public class PlayerController : MonoBehaviour
                 score++;
                 scoreText.text = "Score: " + score;
 
-                burgerController.ClearPrepared();
-                orderController.setOrderCompleted(false);
-                order = orderController.GetOrder();
+                Reset();
+            }
+            else if (!preparing && !prepared.SequenceEqual(order))
+            {
+                heartsRemaining--;
+                heartImages[heartsRemaining].enabled = false;
+
+                Reset();
+
+                if (heartsRemaining == 0)
+                {
+                    GameOver();
+                }
             }
         }
     }
@@ -128,5 +142,22 @@ public class PlayerController : MonoBehaviour
     public bool GetGameOver()
     {
         return gameOver;
+    }
+
+    void GameOver()
+    {
+        gameOver = true;
+        Time.timeScale = 0;
+        gameOverPanel.enabled = true;
+        gameOverText.enabled = true;
+        playAgainText.enabled = true;
+    }
+
+    void Reset()
+    {
+        burgerController.ClearPrepared();
+        orderController.SetOrderCompleted(false);
+        order = orderController.GetOrder();
+        orderController.SetOrderText("");
     }
 }
