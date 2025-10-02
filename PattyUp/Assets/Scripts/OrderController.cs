@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class OrderController : MonoBehaviour
 {
+    PlayerController playerController;
     string[] ingredients;
     string[] order;
     bool orderCompleted = false;
@@ -17,12 +18,20 @@ public class OrderController : MonoBehaviour
         order = new string[Random.Range(1, 9) + 2]; // +2 for top bun and patty
 
         orderText = GameObject.Find("OrderText").GetComponent<Text>();
+
+        playerController = GameObject.Find("FoodBoard").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (!orderCompleted)
+        if (playerController.GetGameOver() == true)
+        {
+            orderText.text = "";
+            return;
+        }
+
+        while (!orderCompleted )
         {
             for (int i = 0; i < order.Length; i++)
             {

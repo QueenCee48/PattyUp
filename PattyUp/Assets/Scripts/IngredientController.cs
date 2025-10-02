@@ -5,19 +5,18 @@ using UnityEngine;
 public class IngredientController : MonoBehaviour
 {
     BurgerController burgerController;
-    OrderController orderController;
+    // OrderController orderController;
     public string ingredientName;
-    int ingredientCount;
-    string[] order;
+    // public int ingredientCount;
+    // string[] order;
 
     // Start is called before the first frame update
     void Start()
     {
         burgerController = GameObject.Find("BurgerDisplay").GetComponent<BurgerController>();
-        orderController = GameObject.Find("Canvas").GetComponent<OrderController>();
+        // orderController = GameObject.Find("Canvas").GetComponent<OrderController>();
 
-        ingredientCount = 0;
-        order = orderController.GetOrder();
+        // order = orderController.GetOrder();
     }
 
     // Update is called once per frame
@@ -28,12 +27,20 @@ public class IngredientController : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (burgerController != null && Time.timeScale != 0 && ingredientCount < 10)
+        if (burgerController != null && Time.timeScale != 0) // && ingredientCount < 10)
         {
             burgerController.AddIngredientByName(ingredientName);
-            ingredientCount++;
+            // ingredientCount++;
             Debug.Log("Added: " + ingredientName);
         }
-        // else if (burgerController != null && Time.timeScale != 0 && ingredientCount == 10 )
+        // else if (burgerController != null && Time.timeScale != 0 && ingredientCount == 10)
+        // {
+        //     if (ingredientName == "Top Bun")
+        //     {
+        //         burgerController.AddIngredientByName(ingredientName);
+        //         ingredientCount = 0;
+        //         Debug.Log("Added: " + ingredientName);
+        //     }
+        // }
     }
 }

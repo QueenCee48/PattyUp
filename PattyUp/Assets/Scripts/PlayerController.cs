@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     string[] prepared;
     bool gameOver;
     bool instructionsShown;
+    bool preparing;
 
     // Start is called before the first frame update
     void Start()
@@ -55,8 +57,9 @@ public class PlayerController : MonoBehaviour
         creditText.enabled = true;
 
         heartsRemaining = hearts.Length;
-        order = orderController.GetOrder();
-        prepared = burgerController.GetPrepared();
+        // order = orderController.GetOrder();
+        // prepared = burgerController.GetPrepared();
+        // preparing = burgerController.GetPreparing();
         timerText.text = "Timer: " + Mathf.CeilToInt(timer);
         gameOver = false;
         instructionsShown = false;
@@ -103,5 +106,27 @@ public class PlayerController : MonoBehaviour
             gameOverText.enabled = true;
             playAgainText.enabled = true;
         }
+
+        if (!gameOver)
+        {
+            order = orderController.GetOrder();
+            prepared = burgerController.GetPrepared();
+            preparing = burgerController.GetPreparing();
+
+            if (!preparing && prepared.SequenceEqual(order))
+            {
+                score++;
+                scoreText.text = "Score: " + score;
+
+                burgerController.ClearPrepared();
+                orderController.setOrderCompleted(false);
+                order = orderController.GetOrder();
+            }
+        }
+    }
+
+    public bool GetGameOver()
+    {
+        return gameOver;
     }
 }

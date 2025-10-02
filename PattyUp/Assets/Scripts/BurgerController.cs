@@ -1,22 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class BurgerController : MonoBehaviour
 {
+    OrderController orderController;
+
     public string[] prepared;
+    bool preparing;
 
     // Start is called before the first frame update
     void Start()
     {
+        orderController = GameObject.Find("Canvas").GetComponent<OrderController>();
+
         prepared = new string[] { };
+        preparing = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void AddIngredientByName(string ingredient)
@@ -27,12 +32,39 @@ public class BurgerController : MonoBehaviour
     string[] AddIngredient(string[] current, string ingredient)
     {
         List<string> tempList = new List<string>(current);
-        tempList.Add(ingredient);
+
+        if (tempList.Contains("Top Bun")) // || (tempList.Contains("Top Bun") && tempList.Count == 10))
+        {
+            orderController.setOrderCompleted(true);
+            preparing = false;
+            return current;
+        }
+
+        if (ingredient == "Top Bun")
+        {
+            tempList.Insert(0, ingredient);
+        }
+        else if (tempList.Count < 9)
+        {
+            tempList.Insert(0, ingredient);
+        }
+
         return tempList.ToArray();
     }
-    
+
     public string[] GetPrepared()
     {
         return prepared;
+    }
+
+    public bool GetPreparing()
+    {
+        return preparing;
+    }
+    
+    public void ClearPrepared()
+    {
+        prepared = new string[] {};
+        preparing = true;
     }
 }
