@@ -309,6 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientName: Bacon
 --- !u!1001 &145743394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -532,6 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientName: Patty
 --- !u!1001 &208230779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -762,6 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientName: Cheese
 --- !u!1001 &299323531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1733,6 +1736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientName: Egg
 --- !u!65 &490841777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2926,6 +2930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientName: Lettuce
 --- !u!1 &813793755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,7 +3556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1000039710
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4372,6 +4377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientName: Tomatoes
 --- !u!1001 &1125017620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5348,6 +5354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientName: Onions
 --- !u!1 &1390683596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5421,6 +5428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientName: Pickles
 --- !u!1 &1423004793
 GameObject:
   m_ObjectHideFlags: 0
@@ -6198,6 +6206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2fef1f9fbb104caecf7f24451dbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientName: Top Bun
 --- !u!1 &1636528332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6402,7 +6411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3393836c080ea4d43afd738a61dceade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 5
+  timer: 45
   score: 0
 --- !u!1 &1790748867
 GameObject:
