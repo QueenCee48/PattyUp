@@ -53,18 +53,21 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("Game");
         }
-        
-        timer -= Time.deltaTime;
-        timerText.text = "Timer: " + Mathf.CeilToInt(timer);
 
-        if (timer <= 0f)
-        {
-            timer = 0f;
-            gameOver = true;
-            Time.timeScale = 0;
-            panelImage.enabled = true;
-            gameOverText.enabled = true;
-            playAgainText.enabled = true;
-        }
+        // while (!gameOver && Time.timeScale == 1)
+        // {
+            timer -= Time.deltaTime;
+            timerText.text = "Timer: " + Mathf.CeilToInt(timer);
+
+            if (timer <= 0f)
+            {
+                timer = 0f;
+                gameOver = true;
+                Time.timeScale = 0;
+                panelImage.enabled = true;
+                gameOverText.enabled = true;
+                playAgainText.enabled = true;
+            }
+        // }
     }
 }
