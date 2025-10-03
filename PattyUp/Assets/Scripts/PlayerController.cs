@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
     Text instructionText;
     Text hintText;
     RawImage[] heartImages;
-    GameObject[] clones;
+    AudioSource bgMusic;
+    AudioSource timerAudio;
+    AudioSource gameOverAudio;
 
     int heartsRemaining;
     public float timer;
@@ -56,9 +58,12 @@ public class PlayerController : MonoBehaviour
         instructionText = GameObject.Find("InstructionText").GetComponent<Text>();
         hintText = GameObject.Find("HintText").GetComponent<Text>();
 
+        bgMusic = GetComponent<AudioSource>();
+        timerAudio = GameObject.Find("TimerText").GetComponent<AudioSource>();
+        gameOverAudio = GameObject.Find("GameOverScreen").GetComponent<AudioSource>();
+
         for (int i = 0; i < hearts.Length; i++)
         {
-            Debug.Log(hearts[i].name);
             heartImages[i] = hearts[i].GetComponent<RawImage>();
         }
 
@@ -72,6 +77,10 @@ public class PlayerController : MonoBehaviour
         gameOver = false;
         instructionsShown = false;
         Time.timeScale = 0;
+        bgMusic.volume = 0.5f;
+        bgMusic.Play();
+        timerAudio.Stop();
+        gameOverAudio.Stop();
     }
 
     // Update is called once per frame
@@ -96,6 +105,7 @@ public class PlayerController : MonoBehaviour
             hintText.enabled = false;
             instructionsShown = false;
             Time.timeScale = 1;
+            bgMusic.volume = 0.25f;
         }
         else if (Input.GetButtonDown("Fire1") && Time.timeScale == 0 && gameOver)
         {
@@ -105,7 +115,14 @@ public class PlayerController : MonoBehaviour
         timer -= Time.deltaTime;
         timerText.text = "Timer: " + Mathf.CeilToInt(timer);
 
-        if (timer <= 0f)
+        if (timer <= 10f && timer > 0f)
+        {
+            if (!timerAudio.isPlaying)
+            {
+                timerAudio.Play();
+            }
+        }
+        else if (timer <= 0f && !gameOver)
         {
             timer = 0f;
             GameOver();
@@ -116,7 +133,6 @@ public class PlayerController : MonoBehaviour
             order = orderController.GetOrder();
             prepared = burgerController.GetPrepared();
             preparing = burgerController.GetPreparing();
-            clones = GameObject.FindGameObjectsWithTag("Clone");
 
             if (topBunPlaced)
             {
@@ -155,6 +171,9 @@ public class PlayerController : MonoBehaviour
         gameOverPanel.enabled = true;
         gameOverText.enabled = true;
         playAgainText.enabled = true;
+        bgMusic.Stop();
+        timerAudio.Stop();
+        gameOverAudio.Play();
     }
 
     void Reset()
