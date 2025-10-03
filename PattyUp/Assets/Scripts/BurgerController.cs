@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BurgerController : MonoBehaviour
@@ -33,7 +34,7 @@ public class BurgerController : MonoBehaviour
     {
         List<string> tempList = new List<string>(current);
 
-        if (tempList.Contains("Top Bun")) // || (tempList.Contains("Top Bun") && tempList.Count == 10))
+        if (tempList.Contains("Top Bun"))
         {
             return current;
         }
@@ -61,10 +62,10 @@ public class BurgerController : MonoBehaviour
     {
         return preparing;
     }
-    
+
     public void ClearPrepared()
     {
-        prepared = new string[] {};
+        prepared = new string[] { };
         preparing = true;
     }
 }

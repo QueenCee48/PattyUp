@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class OrderController : MonoBehaviour
 {
     PlayerController playerController;
+    Text orderText;
+
     string[] ingredients;
     string[] order;
     bool orderCompleted = false;
-    Text orderText;
 
     // Start is called before the first frame update
     void Start()

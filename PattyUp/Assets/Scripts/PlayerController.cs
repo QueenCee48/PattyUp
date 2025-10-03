@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Text scoreText;
     OrderController orderController;
     BurgerController burgerController;
+    IngredientController ingredientController;
     Image gameOverPanel;
     Text gameOverText;
     Text playAgainText;
@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     Text instructionText;
     Text hintText;
     RawImage[] heartImages;
+    GameObject[] clones;
 
     int heartsRemaining;
     public float timer;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     bool gameOver;
     bool instructionsShown;
     bool preparing;
+    bool topBunPlaced;
 
     // Start is called before the first frame update
     void Start()
@@ -53,8 +55,6 @@ public class PlayerController : MonoBehaviour
         instructionTitle = GameObject.Find("InstructionTitle").GetComponent<Text>();
         instructionText = GameObject.Find("InstructionText").GetComponent<Text>();
         hintText = GameObject.Find("HintText").GetComponent<Text>();
-
-        
 
         for (int i = 0; i < hearts.Length; i++)
         {
@@ -116,24 +116,28 @@ public class PlayerController : MonoBehaviour
             order = orderController.GetOrder();
             prepared = burgerController.GetPrepared();
             preparing = burgerController.GetPreparing();
+            clones = GameObject.FindGameObjectsWithTag("Clone");
 
-            if (!preparing && prepared.SequenceEqual(order))
+            if (topBunPlaced)
             {
-                score++;
-                scoreText.text = "Score: " + score;
-
-                Reset();
-            }
-            else if (!preparing && !prepared.SequenceEqual(order))
-            {
-                heartsRemaining--;
-                heartImages[heartsRemaining].enabled = false;
-
-                Reset();
-
-                if (heartsRemaining == 0)
+                if (!preparing && prepared.SequenceEqual(order))
                 {
-                    GameOver();
+                    score++;
+                    scoreText.text = "Score: " + score;
+
+                    Reset();
+                }
+                else if (!preparing && !prepared.SequenceEqual(order))
+                {
+                    heartsRemaining--;
+                    heartImages[heartsRemaining].enabled = false;
+
+                    Reset();
+
+                    if (heartsRemaining == 0)
+                    {
+                        GameOver();
+                    }
                 }
             }
         }
@@ -159,5 +163,18 @@ public class PlayerController : MonoBehaviour
         orderController.SetOrderCompleted(false);
         order = orderController.GetOrder();
         orderController.SetOrderText("");
+
+        foreach (GameObject c in GameObject.FindGameObjectsWithTag("Clone"))
+            Destroy(c);
+
+        foreach (GameObject c in GameObject.FindGameObjectsWithTag("TopBunClone"))
+            Destroy(c);
+
+        topBunPlaced = false;
+    }
+
+    public void NotifyTopBunLanded()
+    {
+        topBunPlaced = true;
     }
 }
