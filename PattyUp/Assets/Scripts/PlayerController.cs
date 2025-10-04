@@ -28,6 +28,13 @@ public class PlayerController : MonoBehaviour
     AudioSource timerAudio;
     AudioSource gameOverAudio;
 
+    // BG Music by mk.matheusklein (Matheus) from Unity Asset Store
+    // Timer Sound Effect by Dustyroom from Unity Asset Store
+    // Game Over Sound Effect by Dustyroom from Unity Asset Store
+    // Click Sound Effect by Dustyroom from Unity Asset Store
+    // Point Sound Effect by Dustyroom from Unity Asset Store
+    // Lose Life Sound Effect by MiraclEI from Pixabay
+
     int heartsRemaining;
     public float timer;
     public int score;
