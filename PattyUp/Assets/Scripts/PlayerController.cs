@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     AudioSource bgMusic;
     AudioSource timerAudio;
     AudioSource gameOverAudio;
+    AudioSource scoreAudio;
+    AudioSource loseLifeAudio;
 
     // BG Music by mk.matheusklein (Matheus) from Unity Asset Store
     // Timer Sound Effect by Dustyroom from Unity Asset Store
@@ -72,6 +74,8 @@ public class PlayerController : MonoBehaviour
         bgMusic = GetComponent<AudioSource>();
         timerAudio = GameObject.Find("TimerText").GetComponent<AudioSource>();
         gameOverAudio = GameObject.Find("GameOverScreen").GetComponent<AudioSource>();
+        scoreAudio = GameObject.Find("ScoreText").GetComponent<AudioSource>();
+        loseLifeAudio = GameObject.Find("Hearts").GetComponent<AudioSource>();
 
         for (int i = 0; i < hearts.Length; i++)
         {
@@ -149,6 +153,8 @@ public class PlayerController : MonoBehaviour
             {
                 if (!preparing && prepared.SequenceEqual(order))
                 {
+                    scoreAudio.Play();
+
                     score++;
                     scoreText.text = "Score: " + score;
 
@@ -156,6 +162,8 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (!preparing && !prepared.SequenceEqual(order))
                 {
+                    loseLifeAudio.Play();
+                    
                     heartsRemaining--;
                     heartImages[heartsRemaining].enabled = false;
 
