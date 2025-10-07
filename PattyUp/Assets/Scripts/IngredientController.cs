@@ -7,6 +7,7 @@ public class IngredientController : MonoBehaviour
     BurgerController burgerController;    
     GameObject ingredientClone;
     Transform hamburger;
+    AudioSource clickAudio;
     public GameObject ingredientObject;
     public Vector3 clonePosition;
     public string ingredientName;
@@ -16,6 +17,7 @@ public class IngredientController : MonoBehaviour
     {
         burgerController = GameObject.Find("BurgerDisplay").GetComponent<BurgerController>();
         hamburger = GameObject.Find("Hamburger").GetComponent<Transform>();
+        clickAudio = GameObject.Find("ParcelGrid").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,8 @@ public class IngredientController : MonoBehaviour
     {
         if (burgerController != null && Time.timeScale != 0)
         {
+            clickAudio.Play();
+            
             burgerController.AddIngredientByName(ingredientName);
 
             ingredientClone = Instantiate(ingredientObject);

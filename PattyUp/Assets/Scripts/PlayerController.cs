@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour
     // Click Sound Effect by Dustyroom from Unity Asset Store
     // Point Sound Effect by Dustyroom from Unity Asset Store
     // Lose Life Sound Effect by MiraclEI from Pixabay
+    // Wall & Table Textures by Yughues (formerly Nobiax) from Unity Asset Store
+    // Parcel Box Asset by TP Studios from Unity Asset Store
+    // Most Burger Assets by _TheCloudy__ from itch.io
+    // Baloo2 Font by Ek Type from 1001 Fonts
 
     int heartsRemaining;
     public float timer;
