@@ -28,7 +28,7 @@ public class IngredientController : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (burgerController != null && Time.timeScale != 0)
+        if (burgerController != null && Time.timeScale != 0 && burgerController.GetPrepared().Length < 9)
         {
             clickAudio.Play();
             
