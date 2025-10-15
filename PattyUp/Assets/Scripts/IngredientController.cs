@@ -28,7 +28,7 @@ public class IngredientController : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (burgerController != null && Time.timeScale != 0 && burgerController.GetPrepared().Length < 9)
+        if (burgerController != null && Time.timeScale != 0 && burgerController.GetPrepared().Length < 11)
         {
             clickAudio.Play();
             
@@ -44,6 +44,11 @@ public class IngredientController : MonoBehaviour
                 ingredientClone.tag = "TopBunClone";
                 ingredientClone.AddComponent<CloneController>();
             }
+            // else if (ingredientName == burgerController.GetPrepared()[0] && burgerController.GetPrepared().Length == 9)
+            // {
+            //     ingredientClone.tag = "LastClone";
+            //     ingredientClone.AddComponent<CloneController>();
+            // }
             else
             {
                 ingredientClone.tag = "Clone";

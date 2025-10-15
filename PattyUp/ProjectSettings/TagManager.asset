@@ -16,6 +16,7 @@ TagManager:
   - Egg
   - Clone
   - TopBunClone
+  - LastClone
   layers:
   - Default
   - TransparentFX

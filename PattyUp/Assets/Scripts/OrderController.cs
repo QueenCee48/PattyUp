@@ -16,7 +16,7 @@ public class OrderController : MonoBehaviour
     void Start()
     {
         ingredients = new string[] { "Top Bun", "Lettuce", "Tomatoes", "Onions", "Pickles", "Cheese", "Egg", "Bacon", "Patty" };
-        order = new string[Random.Range(1, 9) + 2]; // +2 for top bun and patty
+        order = new string[Random.Range(1, 6) + 2]; // +2 for top bun and patty
 
         orderText = GameObject.Find("OrderText").GetComponent<Text>();
 
@@ -72,9 +72,14 @@ public class OrderController : MonoBehaviour
     {
         orderCompleted = status;
     }
-    
+
     public void SetOrderText(string text)
     {
         orderText.text = text;
+    }
+    
+    public void resetOrderNum()
+    {
+        order = new string[Random.Range(1, 6) + 2];
     }
 }

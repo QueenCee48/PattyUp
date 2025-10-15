@@ -201,12 +201,16 @@ public class PlayerController : MonoBehaviour
         orderController.SetOrderCompleted(false);
         order = orderController.GetOrder();
         orderController.SetOrderText("");
+        orderController.resetOrderNum();
 
         foreach (GameObject c in GameObject.FindGameObjectsWithTag("Clone"))
             Destroy(c);
 
         foreach (GameObject c in GameObject.FindGameObjectsWithTag("TopBunClone"))
             Destroy(c);
+        
+        // foreach (GameObject c in GameObject.FindGameObjectsWithTag("LastClone"))
+        //     Destroy(c);
 
         topBunPlaced = false;
     }

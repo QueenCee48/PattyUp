@@ -7002,7 +7002,7 @@ MonoBehaviour:
   - {fileID: 1790748867}
   - {fileID: 813793755}
   - {fileID: 603045582}
-  timer: 45
+  timer: 60
   score: 0
 --- !u!82 &1723961025
 AudioSource:
