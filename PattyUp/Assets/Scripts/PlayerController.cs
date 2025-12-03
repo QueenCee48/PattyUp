@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     IngredientController ingredientController;
     Image gameOverPanel;
     Text gameOverText;
+    Text yourScoreText;
     Text playAgainText;
     Image startPanel;
     RawImage logo;
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
         burgerController = GameObject.Find("BurgerDisplay").GetComponent<BurgerController>();
         gameOverPanel = GameObject.Find("GameOverPanel").GetComponent<Image>();
         gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
+        yourScoreText = GameObject.Find("YourScoreText").GetComponent<Text>();
         playAgainText = GameObject.Find("PlayAgainText").GetComponent<Text>();
         startPanel = GameObject.Find("StartPanel").GetComponent<Image>();
         logo = GameObject.Find("PattyUpLogo").GetComponent<RawImage>();
@@ -189,6 +191,8 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0;
         gameOverPanel.enabled = true;
         gameOverText.enabled = true;
+        yourScoreText.enabled = true;
+        yourScoreText.text = "Your Score: " + score;
         playAgainText.enabled = true;
         bgMusic.Stop();
         timerAudio.Stop();
