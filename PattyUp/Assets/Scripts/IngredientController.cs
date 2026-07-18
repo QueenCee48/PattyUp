@@ -44,11 +44,6 @@ public class IngredientController : MonoBehaviour
                 ingredientClone.tag = "TopBunClone";
                 ingredientClone.AddComponent<CloneController>();
             }
-            // else if (ingredientName == burgerController.GetPrepared()[0] && burgerController.GetPrepared().Length == 9)
-            // {
-            //     ingredientClone.tag = "LastClone";
-            //     ingredientClone.AddComponent<CloneController>();
-            // }
             else
             {
                 ingredientClone.tag = "Clone";

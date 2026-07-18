@@ -9,7 +9,6 @@ public class BurgerController : MonoBehaviour
 
     public string[] prepared;
     bool preparing;
-    // public int ingCount;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +17,6 @@ public class BurgerController : MonoBehaviour
 
         prepared = new string[] { };
         preparing = true;
-        // ingCount = 0;
     }
 
     // Update is called once per frame
@@ -36,13 +34,12 @@ public class BurgerController : MonoBehaviour
     {
         List<string> tempList = new List<string>(current);
 
-        if (tempList.Contains("Top Bun")) // || ingCount >= 9)
+        if (tempList.Contains("Top Bun")) 
         {
-            // ingCount = 0;
             return current;
         }
 
-        if (ingredient == "Top Bun") // || ingCount >= 9)
+        if (ingredient == "Top Bun") 
         {
             preparing = false;
             orderController.SetOrderCompleted(true);
@@ -51,7 +48,6 @@ public class BurgerController : MonoBehaviour
         else if (tempList.Count < 9)
         {
             tempList.Insert(0, ingredient);
-            // ingCount++;
         }
 
         return tempList.ToArray();

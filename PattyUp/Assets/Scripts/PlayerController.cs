@@ -8,28 +8,20 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public GameObject[] hearts;
-    Text timerText;
-    Text scoreText;
-    OrderController orderController;
-    BurgerController burgerController;
-    IngredientController ingredientController;
-    Image gameOverPanel;
-    Text gameOverText;
-    Text yourScoreText;
-    Text playAgainText;
-    Image startPanel;
-    RawImage logo;
-    Text playText;
-    Text creditText;
-    Text instructionTitle;
-    Text instructionText;
-    Text hintText;
+    public Text timerText;
+    public Text scoreText;
+    public OrderController orderController;
+    public BurgerController burgerController;
+    public ScreenCtrlr screenCtrlr;
+
     RawImage[] heartImages;
-    AudioSource bgMusic;
-    AudioSource timerAudio;
-    AudioSource gameOverAudio;
-    AudioSource scoreAudio;
-    AudioSource loseLifeAudio;
+    public AudioSource bgMusic;
+    public AudioSource timerAudio;
+    public AudioSource gameOverAudio;
+    public AudioSource scoreAudio;
+    public AudioSource loseLifeAudio;
+
+    public string gameMode = null;
 
     // BG Music by mk.matheusklein (Matheus) from Unity Asset Store
     // Timer Sound Effect by Dustyroom from Unity Asset Store
@@ -47,52 +39,24 @@ public class PlayerController : MonoBehaviour
     public int score;
     string[] order;
     string[] prepared;
-    bool gameOver;
-    bool instructionsShown;
+    public bool gameOver;
     bool preparing;
     bool topBunPlaced;
 
     // Start is called before the first frame update
     void Start()
     {
-        //hearts = GameObject.FindGameObjectsWithTag("Heart");
         heartImages = new RawImage[hearts.Length];
-        timerText = GameObject.Find("TimerText").GetComponent<Text>();
-        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
-        orderController = GameObject.Find("Canvas").GetComponent<OrderController>();
-        burgerController = GameObject.Find("BurgerDisplay").GetComponent<BurgerController>();
-        gameOverPanel = GameObject.Find("GameOverPanel").GetComponent<Image>();
-        gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-        yourScoreText = GameObject.Find("YourScoreText").GetComponent<Text>();
-        playAgainText = GameObject.Find("PlayAgainText").GetComponent<Text>();
-        startPanel = GameObject.Find("StartPanel").GetComponent<Image>();
-        logo = GameObject.Find("PattyUpLogo").GetComponent<RawImage>();
-        playText = GameObject.Find("PlayText").GetComponent<Text>();
-        creditText = GameObject.Find("CreditText").GetComponent<Text>();
-        instructionTitle = GameObject.Find("InstructionTitle").GetComponent<Text>();
-        instructionText = GameObject.Find("InstructionText").GetComponent<Text>();
-        hintText = GameObject.Find("HintText").GetComponent<Text>();
-
         bgMusic = GetComponent<AudioSource>();
-        timerAudio = GameObject.Find("TimerText").GetComponent<AudioSource>();
-        gameOverAudio = GameObject.Find("GameOverScreen").GetComponent<AudioSource>();
-        scoreAudio = GameObject.Find("ScoreText").GetComponent<AudioSource>();
-        loseLifeAudio = GameObject.Find("Hearts").GetComponent<AudioSource>();
 
         for (int i = 0; i < hearts.Length; i++)
         {
             heartImages[i] = hearts[i].GetComponent<RawImage>();
         }
 
-        startPanel.enabled = true;
-        logo.enabled = true;
-        playText.enabled = true;
-        creditText.enabled = true;
-
         heartsRemaining = hearts.Length;
         timerText.text = "Timer: " + Mathf.CeilToInt(timer);
         gameOver = false;
-        instructionsShown = false;
         Time.timeScale = 0;
         bgMusic.volume = 0.5f;
         bgMusic.Play();
@@ -103,47 +67,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.timeScale == 0 && !gameOver && !instructionsShown)
-        {
-            logo.enabled = false;
-            playText.enabled = false;
-            creditText.enabled = false;
-
-            instructionTitle.enabled = true;
-            instructionText.enabled = true;
-            hintText.enabled = true;
-            instructionsShown = true;
-        }
-        else if (Input.GetButtonDown("Fire1") && Time.timeScale == 0 && !gameOver && instructionsShown)
-        {
-            startPanel.enabled = false;
-            instructionTitle.enabled = false;
-            instructionText.enabled = false;
-            hintText.enabled = false;
-            instructionsShown = false;
-            Time.timeScale = 1;
-            bgMusic.volume = 0.25f;
-        }
-        else if (Input.GetButtonDown("Fire1") && Time.timeScale == 0 && gameOver)
-        {
-            SceneManager.LoadScene("Game");
-        }
-
-        timer -= Time.deltaTime;
-        timerText.text = "Timer: " + Mathf.CeilToInt(timer);
-
-        if (timer <= 10f && timer > 0f)
-        {
-            if (!timerAudio.isPlaying)
-            {
-                timerAudio.Play();
-            }
-        }
-        else if (timer <= 0f && !gameOver)
-        {
-            timer = 0f;
-            GameOver();
-        }
+        handleTimer();
 
         if (!gameOver)
         {
@@ -188,12 +112,7 @@ public class PlayerController : MonoBehaviour
     void GameOver()
     {
         gameOver = true;
-        Time.timeScale = 0;
-        gameOverPanel.enabled = true;
-        gameOverText.enabled = true;
-        yourScoreText.enabled = true;
-        yourScoreText.text = "Your Score: " + score;
-        playAgainText.enabled = true;
+        screenCtrlr.TurnOnGameOverScreen();
         bgMusic.Stop();
         timerAudio.Stop();
         gameOverAudio.Play();
@@ -212,9 +131,6 @@ public class PlayerController : MonoBehaviour
 
         foreach (GameObject c in GameObject.FindGameObjectsWithTag("TopBunClone"))
             Destroy(c);
-        
-        // foreach (GameObject c in GameObject.FindGameObjectsWithTag("LastClone"))
-        //     Destroy(c);
 
         topBunPlaced = false;
     }
@@ -222,5 +138,32 @@ public class PlayerController : MonoBehaviour
     public void NotifyTopBunLanded()
     {
         topBunPlaced = true;
+    }
+
+    void handleTimer()
+    {
+        if (gameMode == "classic") 
+        {
+            timer -= Time.deltaTime;
+            timerText.text = "Timer: " + Mathf.CeilToInt(timer);
+
+            if (timer <= 10f && timer > 0f)
+            {
+                if (!timerAudio.isPlaying)
+                {
+                    timerAudio.Play();
+                }
+            }
+            else if (timer <= 0f && !gameOver)
+            {
+                timer = 0f;
+                GameOver();
+            }
+        }
+        else if (gameMode == "endless")
+        {
+            timer += Time.deltaTime;
+            timerText.enabled = false;
+        }
     }
 }
