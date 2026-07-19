@@ -1,10 +1,10 @@
-##🍔 Patty Up!
+# 🍔 Patty Up!
 
 A fast-paced 3D burger-building game!
 
 In Patty Up, you’re working the grill at lightning speed. Customers place orders, and it’s your job to stack the perfect burger using the ingredients in front of you. Choose carefully—every mistake costs a life!
 
-#🕹️ How to Play
+## 🕹️ How to Play
 Check the order on the receipt
 
 Select ingredients from the tray to build the burger
@@ -15,7 +15,7 @@ Get it wrong → Lose a life
 
 Run out of hearts → Game Over!
 
-#⭐ Features
+## ⭐ Features
 Smooth, easy-to-understand 3D gameplay
 
 Fun ingredient selection system
@@ -31,7 +31,7 @@ Test your speed and burger-stacking skills!
 
 
 
-#🙏 Credits
+## 🙏 Credits
 Game Developer: Ciera Baucham aka QueenCee48
 BG Music by mk.matheusklein (Matheus) from Unity Asset Store
 Timer Sound Effect by Dustyroom from Unity Asset Store
