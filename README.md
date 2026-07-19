@@ -32,14 +32,14 @@ Test your speed and burger-stacking skills!
 
 
 ## 🙏 Credits
-Game Developer: Ciera Baucham aka QueenCee48
-BG Music by mk.matheusklein (Matheus) from Unity Asset Store
-Timer Sound Effect by Dustyroom from Unity Asset Store
-Game Over Sound Effect by Dustyroom from Unity Asset Store
-Click Sound Effect by Dustyroom from Unity Asset Store
-Point Sound Effect by Dustyroom from Unity Asset Store
-Lose Life Sound Effect by MiraclEI from Pixabay
-Wall & Table Textures by Yughues (formerly Nobiax) from Unity Asset Store
-Parcel Box Asset by TP Studios from Unity Asset Store
-Most Burger Assets by _TheCloudy__ from itch.io
-Baloo2 Font by Ek Type from 1001 Fonts
+- **Game Developer:** Ciera Baucham aka QueenCee48 aka The ArtCee One
+- **BG Music:** mk.matheusklein (Matheus) from Unity Asset Store
+- **Timer Sound Effect:** Dustyroom from Unity Asset Store
+- **Game Over Sound Effect:** Dustyroom from Unity Asset Store
+- **Click Sound Effect:** Dustyroom from Unity Asset Store
+- **Point Sound Effect:** Dustyroom from Unity Asset Store
+- **Lose Life Sound Effect:** MiraclEI from Pixabay
+- **Wall & Table Textures:** Yughues (formerly Nobiax) from Unity Asset Store
+- **Parcel Box Asset:** TP Studios from Unity Asset Store
+- **Majority of the Burger Assets:** _TheCloudy__ from itch.io
+- **Baloo2 Font:** Ek Type from 1001 Fonts
