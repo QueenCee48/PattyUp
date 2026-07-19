@@ -41,5 +41,5 @@ Test your speed and burger-stacking skills!
 - **Lose Life Sound Effect:** MiraclEI from Pixabay
 - **Wall & Table Textures:** Yughues (formerly Nobiax) from Unity Asset Store
 - **Parcel Box Asset:** TP Studios from Unity Asset Store
-- **Majority of the Burger Assets:** _TheCloudy__ from itch.io
+- **Burger Assets:** _TheCloudy__ from itch.io & myself
 - **Baloo2 Font:** Ek Type from 1001 Fonts
