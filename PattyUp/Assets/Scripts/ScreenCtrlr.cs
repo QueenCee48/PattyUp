@@ -13,6 +13,8 @@ public class ScreenCtrlr : MonoBehaviour
     public Text yourScoreText;
     public Text replayBtnText;
     public Image replayBtnImg;
+    public Text changeModeBtnText;
+    public Image changeModeBtnImg;
     public Image startPanel;
     public RawImage logo;
     public Text playBtnText;
@@ -135,6 +137,8 @@ public class ScreenCtrlr : MonoBehaviour
         yourScoreText.text = "Your Score: " + playerController.score;
         replayBtnText.enabled = true;
         replayBtnImg.enabled = true;
+        changeModeBtnText.enabled = true;
+        changeModeBtnImg.enabled = true;
         gameOverScreenOn = true;
         Time.timeScale = 0;
 
@@ -144,13 +148,31 @@ public class ScreenCtrlr : MonoBehaviour
 
     public void TurnOffGameOverScreen()
     {
-        // gameOverPanel.enabled = false;
-        // gameOverText.enabled = false;
-        // yourScoreText.enabled = false;
-        // yourScoreText.text = "";
-        // replayBtnText.enabled = false;
-        // replayBtnImg.enabled = false;
-        // gameOverScreenOn = false;
-        SceneManager.LoadScene("Game");
+        gameOverPanel.enabled = false;
+        gameOverText.enabled = false;
+        yourScoreText.enabled = false;
+        yourScoreText.text = "";
+        replayBtnText.enabled = false;
+        replayBtnImg.enabled = false;
+        changeModeBtnText.enabled = false;
+        changeModeBtnImg.enabled = false;
+        gameOverScreenOn = false;
+        // SceneManager.LoadScene("Game");
+    }
+
+    public void ReplayButton()
+    {
+        TurnOffGameOverScreen();
+
+        playerController.RestartGame();
+    }
+
+    public void ChangeMode()
+    {
+        TurnOffGameOverScreen();
+
+        playerController.RestartGame();
+
+        TurnOnInstructionScreen();
     }
 }

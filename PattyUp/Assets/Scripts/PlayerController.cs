@@ -166,4 +166,34 @@ public class PlayerController : MonoBehaviour
             timerText.enabled = false;
         }
     }
+
+    public void RestartGame()
+    {
+        // Reset stats
+        score = 0;
+        scoreText.text = "Score: 0";
+
+        gameOver = false;
+
+        // Reset hearts
+        heartsRemaining = hearts.Length;
+
+        foreach (RawImage heart in heartImages)
+        {
+            heart.enabled = true;
+        }
+
+        // Reset timer
+        if (gameMode == "classic") {timer = 60f;}
+        else if (gameMode == "endless") {timer = 0f;}
+
+        // Reset burger/order
+        Reset();
+
+        bgMusic.Play();
+        gameOverAudio.Stop();
+        timerAudio.Stop();
+
+        Time.timeScale = 1;
+    }
 }
