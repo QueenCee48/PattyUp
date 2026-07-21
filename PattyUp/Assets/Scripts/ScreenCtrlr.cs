@@ -11,6 +11,11 @@ public class ScreenCtrlr : MonoBehaviour
     public Image gameOverPanel;
     public Text gameOverText;
     public Text yourScoreText;
+    public Text accuracyText;
+    public Text endlessScoreText;
+    public Text endlessAccuracyText;
+    public Text streakText;
+    public Text survivalTimeText;
     public Text replayBtnText;
     public Image replayBtnImg;
     public Text changeModeBtnText;
@@ -133,8 +138,24 @@ public class ScreenCtrlr : MonoBehaviour
     {
         gameOverPanel.enabled = true;
         gameOverText.enabled = true;
-        yourScoreText.enabled = true;
-        yourScoreText.text = "Your Score: " + playerController.score;
+
+        if (playerController.gameMode == "classic")
+        {
+            yourScoreText.enabled = true;
+            yourScoreText.text = "Score: " + playerController.score;
+            accuracyText.enabled = true;
+        }
+        else if (playerController.gameMode == "endless")
+        {
+            endlessScoreText.enabled = true;
+            endlessScoreText.text = "Score: " + playerController.score;
+            endlessAccuracyText.enabled = true;
+            streakText.enabled = true;
+            streakText.text = "Longest Streak: " + playerController.longestStreak;
+            survivalTimeText.enabled = true;
+            survivalTimeText.text = "Survival Time: " + Mathf.FloorToInt(playerController.timer) + "s";
+        }
+
         replayBtnText.enabled = true;
         replayBtnImg.enabled = true;
         changeModeBtnText.enabled = true;
@@ -151,7 +172,26 @@ public class ScreenCtrlr : MonoBehaviour
         gameOverPanel.enabled = false;
         gameOverText.enabled = false;
         yourScoreText.enabled = false;
-        yourScoreText.text = "";
+
+        if (playerController.gameMode == "classic")
+        {
+            yourScoreText.enabled = false;
+            yourScoreText.text = "";
+            accuracyText.enabled = false;
+            accuracyText.text = "";
+        }
+        else if (playerController.gameMode == "endless")
+        {
+            endlessScoreText.enabled = false;
+            endlessScoreText.text = "";
+            endlessAccuracyText.enabled = false;
+            endlessAccuracyText.text = "";
+            streakText.enabled = false;
+            streakText.text = "";
+            survivalTimeText.enabled = false;
+            survivalTimeText.text = "";
+        }
+
         replayBtnText.enabled = false;
         replayBtnImg.enabled = false;
         changeModeBtnText.enabled = false;

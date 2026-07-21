@@ -43,6 +43,13 @@ public class PlayerController : MonoBehaviour
     bool preparing;
     bool topBunPlaced;
 
+    public int correctOrders;
+    public int totalOrders;
+    public float accuracy;
+    public int currentStreak;
+    public int longestStreak;
+    public int multiplier = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,11 +84,35 @@ public class PlayerController : MonoBehaviour
 
             if (topBunPlaced)
             {
+                totalOrders++;
+
                 if (!preparing && prepared.SequenceEqual(order))
                 {
                     scoreAudio.Play();
 
-                    score++;
+                    correctOrders++;
+
+                    if (gameMode == "classic")
+                    {
+                        score += 1;
+                    }
+                    else if (gameMode == "endless")
+                    {
+                        currentStreak++;
+                        
+                        if (currentStreak % 5 == 0 && multiplier < 5)
+                        {
+                            multiplier++;
+                        }
+
+                        score += 100 * multiplier;
+
+                        if (currentStreak > longestStreak)
+                        {
+                            longestStreak = currentStreak;
+                        }
+                    }
+                    
                     scoreText.text = "Score: " + score;
 
                     Reset();
@@ -95,11 +126,20 @@ public class PlayerController : MonoBehaviour
 
                     Reset();
 
+                    if (gameMode == "endless")
+                    {
+                        currentStreak = 0;
+                        multiplier = 1;
+                    }
+
                     if (heartsRemaining == 0)
                     {
                         GameOver();
                     }
                 }
+                accuracy = (float)correctOrders / totalOrders * 100f;
+                screenCtrlr.accuracyText.text = "Accuracy: " + Mathf.FloorToInt(accuracy) + "%";
+                screenCtrlr.endlessAccuracyText.text = "Accuracy: " + Mathf.FloorToInt(accuracy) + "%";
             }
         }
     }
@@ -170,7 +210,14 @@ public class PlayerController : MonoBehaviour
     public void RestartGame()
     {
         // Reset stats
+        correctOrders = 0;
         score = 0;
+        totalOrders = 0;
+        accuracy = 0;
+        // survivalTime = 0;
+        currentStreak = 0;
+        longestStreak = 0;
+        multiplier = 1;
         scoreText.text = "Score: 0";
 
         gameOver = false;
