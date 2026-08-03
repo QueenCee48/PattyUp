@@ -32,7 +32,7 @@ Test your speed and burger-stacking skills!
 ## 🌐 Follow Patty Up
 <p align="left">
   <a href="https://queencee48.itch.io/patty-up-demo" target="_blank">
-    <img src="GameImages/itch-io-logo.png" alt="Play Patty Up Demo on itch.io" width="40">
+    <img src="GameImages/itch-io-logo.png" alt="Play Patty Up Demo on itch.io" width="50">
   </a>
   <a href="https://www.instagram.com/patty_up_game/" target="_blank">
     <img src="GameImages/instagram-logo.png" alt="Follow Patty Up on Instagram" width="40">
