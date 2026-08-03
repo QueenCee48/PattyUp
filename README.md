@@ -29,6 +29,24 @@ Satisfying point system for perfect burgers
 🍳 How long can you keep up the orders?
 Test your speed and burger-stacking skills!
 
+## 🌐 Follow Patty Up
+<p align="center">
+  <a href="https://queencee48.itch.io/patty-up-demo" target="_blank">
+    <img src="GameImages/itch-io-logo.png" alt="Play Patty Up on itch.io" width="100">
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.instagram.com/patty_up_game/" target="_blank">
+    <img src="GameImages/instagram-logo.png" alt="Follow Patty Up on Instagram" width="100">
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.tiktok.com/@patty_up_game" target="_blank">
+    <img src="GameImages/tiktok-logo.png" alt="Follow Patty Up on TikTok" width="100">
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.youtube.com/@CieraBaucham" target="_blank">
+    <img src="GameImages/youtube-logo.png" alt="Watch on YouTube" width="100">
+  </a>
+</p>
 
 
 ## 🙏 Credits
